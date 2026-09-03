@@ -26,9 +26,9 @@ e.g.
 
 ## May be combined with
 
-- WPAD Hijacking - (Force proxy auth over NTML)
-- SMB Relay      - (Relay captured NTML auth to another SMB)
-- NTML Relay     - (Relay auth to SMB/HTTP/LDAP/MSQL/others...)
-- IPv6/mitm6     - (Abuse IPv6 NameResolver to trigger NTML auth)
+- WPAD Hijacking - (Force proxy auth over NTLM)
+- SMB Relay      - (Relay captured NTLM auth to another SMB)
+- NTLM Relay     - (Relay auth to SMB/HTTP/LDAP/MSQL/others...)
+- IPv6/mitm6     - (Abuse IPv6 NameResolver to trigger NTLM auth)
 
 
