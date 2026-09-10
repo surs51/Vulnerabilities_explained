@@ -26,7 +26,7 @@ Password becomes the key -
 - M1 - AP -> Client sends ANonce, a random nonce (random number used once)
 - M2 - Client -> SNonce + MIC (message integrity code). Having 2 nonces - computes the PTK (Pairwise Transient Key)  
 - M3 - AP -> MIC verifies the client + group key (GTK), install key
-- M4 - client -> ACK, keys in traffic incrypted
+- M4 - client -> ACK, keys in traffic encrypted
 
 PTK = PRF ( PMK, ANonce, SNonce, AP-Mac, STA-Mac )
 
