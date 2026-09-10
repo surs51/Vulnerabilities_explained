@@ -58,7 +58,7 @@ hcxpcapngtool -o hash.hc22000 dump.pcapng
 hashcat -m 22000 hash.hc22000 rockyou.txt
 ```
 
-№№ Cracking by capturing the handshake
+## Cracking by capturing the handshake
 
 <img width="1280" height="720" alt="02-deauth-handshake-capture" src="https://github.com/user-attachments/assets/9b1d8633-e101-4e67-af60-7444a0dc6b63" />
 
