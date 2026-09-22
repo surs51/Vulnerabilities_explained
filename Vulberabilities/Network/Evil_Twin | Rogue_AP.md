@@ -59,6 +59,6 @@ sudo aireplay-ng -0 0 -a <AP_MAC> wlan0   # 0 = deauth constantly
 - Harvesting / EvilTrust
 - HTTP Response Injection
 - JS BeEF Hooking
-- WPAD hijacking
-- [LLMNR Poisoning](LLMNR%20poisoning.md)
+- [WPAD Hijacking](WPAD%20hijacking.md) 
+- [LLMNR Poisoning](LLMNR%20Poisoning.md)
 
